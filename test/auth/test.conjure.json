@@ -1,0 +1,53 @@
+{
+  "version" : 1,
+  "errors" : [ {
+    "errorName" : {
+      "name" : "Unauthenticated",
+      "package" : "conjure.typescript.fastify.test.auth"
+    },
+    "namespace" : "User",
+    "code" : "PERMISSION_DENIED",
+    "safeArgs" : [ ],
+    "unsafeArgs" : [ ]
+  } ],
+  "types" : [ ],
+  "services" : [ {
+    "serviceName" : {
+      "name" : "TestAuthService",
+      "package" : "conjure.typescript.fastify.test.auth"
+    },
+    "endpoints" : [ {
+      "endpointName" : "testAuth",
+      "httpMethod" : "GET",
+      "httpPath" : "/auth/testAuth",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "authHeader",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "BEARERTOKEN"
+            }
+          }
+        },
+        "paramType" : {
+          "type" : "header",
+          "header" : {
+            "paramId" : "Authorization"
+          }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "markers" : [ ],
+      "tags" : [ ]
+    } ],
+    "docs" : "Auth Service\n"
+  } ],
+  "extensions" : { }
+}

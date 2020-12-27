@@ -1,0 +1,498 @@
+{
+  "version" : 1,
+  "errors" : [ {
+    "errorName" : {
+      "name" : "UserNotFound",
+      "package" : "conjure.typescript.fastify.test.types"
+    },
+    "namespace" : "User",
+    "code" : "NOT_FOUND",
+    "safeArgs" : [ {
+      "fieldName" : "userId",
+      "type" : {
+        "type" : "primitive",
+        "primitive" : "UUID"
+      }
+    } ],
+    "unsafeArgs" : [ ]
+  } ],
+  "types" : [ {
+    "type" : "object",
+    "object" : {
+      "typeName" : {
+        "name" : "CreateUserRequest",
+        "package" : "conjure.typescript.fastify.test.types"
+      },
+      "fields" : [ {
+        "fieldName" : "email",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "STRING"
+        }
+      }, {
+        "fieldName" : "gender",
+        "type" : {
+          "type" : "reference",
+          "reference" : {
+            "name" : "Gender",
+            "package" : "conjure.typescript.fastify.test.types"
+          }
+        }
+      }, {
+        "fieldName" : "dateOfBirth",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "DATETIME"
+        }
+      }, {
+        "fieldName" : "numOfFollowers",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "INTEGER"
+        }
+      }, {
+        "fieldName" : "balance",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "DOUBLE"
+        }
+      }, {
+        "fieldName" : "isReferred",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "BOOLEAN"
+        }
+      }, {
+        "fieldName" : "referralId",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "UUID"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "secretKeys",
+        "type" : {
+          "type" : "list",
+          "list" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "STRING"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "remark",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "ANY"
+        }
+      } ]
+    }
+  }, {
+    "type" : "enum",
+    "enum" : {
+      "typeName" : {
+        "name" : "Gender",
+        "package" : "conjure.typescript.fastify.test.types"
+      },
+      "values" : [ {
+        "value" : "MALE"
+      }, {
+        "value" : "FEMALE"
+      } ]
+    }
+  }, {
+    "type" : "object",
+    "object" : {
+      "typeName" : {
+        "name" : "UpdateUserRequest",
+        "package" : "conjure.typescript.fastify.test.types"
+      },
+      "fields" : [ {
+        "fieldName" : "email",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "STRING"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "gender",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "reference",
+              "reference" : {
+                "name" : "Gender",
+                "package" : "conjure.typescript.fastify.test.types"
+              }
+            }
+          }
+        }
+      }, {
+        "fieldName" : "dateOfBirth",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "DATETIME"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "numOfFollowers",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "INTEGER"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "balance",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "DOUBLE"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "isReferred",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "BOOLEAN"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "referralId",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "UUID"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "secretKeys",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "list",
+              "list" : {
+                "itemType" : {
+                  "type" : "primitive",
+                  "primitive" : "STRING"
+                }
+              }
+            }
+          }
+        }
+      }, {
+        "fieldName" : "remark",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "ANY"
+            }
+          }
+        }
+      } ]
+    }
+  }, {
+    "type" : "object",
+    "object" : {
+      "typeName" : {
+        "name" : "User",
+        "package" : "conjure.typescript.fastify.test.types"
+      },
+      "fields" : [ {
+        "fieldName" : "userId",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "UUID"
+        }
+      }, {
+        "fieldName" : "email",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "STRING"
+        }
+      }, {
+        "fieldName" : "gender",
+        "type" : {
+          "type" : "reference",
+          "reference" : {
+            "name" : "Gender",
+            "package" : "conjure.typescript.fastify.test.types"
+          }
+        }
+      }, {
+        "fieldName" : "dateOfBirth",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "DATETIME"
+        }
+      }, {
+        "fieldName" : "numOfFollowers",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "INTEGER"
+        }
+      }, {
+        "fieldName" : "balance",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "DOUBLE"
+        }
+      }, {
+        "fieldName" : "isReferred",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "BOOLEAN"
+        }
+      }, {
+        "fieldName" : "referralId",
+        "type" : {
+          "type" : "optional",
+          "optional" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "UUID"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "secretKeys",
+        "type" : {
+          "type" : "list",
+          "list" : {
+            "itemType" : {
+              "type" : "primitive",
+              "primitive" : "STRING"
+            }
+          }
+        }
+      }, {
+        "fieldName" : "remark",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "ANY"
+        }
+      } ]
+    }
+  } ],
+  "services" : [ {
+    "serviceName" : {
+      "name" : "TestCrudService",
+      "package" : "conjure.typescript.fastify.test.crud"
+    },
+    "endpoints" : [ {
+      "endpointName" : "testGetAll",
+      "httpMethod" : "GET",
+      "httpPath" : "/crud/testGetAll",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "limit",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "INTEGER"
+        },
+        "paramType" : {
+          "type" : "query",
+          "query" : {
+            "paramId" : "limit"
+          }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      }, {
+        "argName" : "offset",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "INTEGER"
+        },
+        "paramType" : {
+          "type" : "query",
+          "query" : {
+            "paramId" : "offset"
+          }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "returns" : {
+        "type" : "list",
+        "list" : {
+          "itemType" : {
+            "type" : "reference",
+            "reference" : {
+              "name" : "User",
+              "package" : "conjure.typescript.fastify.test.types"
+            }
+          }
+        }
+      },
+      "markers" : [ ],
+      "tags" : [ ]
+    }, {
+      "endpointName" : "testGetById",
+      "httpMethod" : "GET",
+      "httpPath" : "/crud/testGetById/{id}",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "id",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "UUID"
+        },
+        "paramType" : {
+          "type" : "path",
+          "path" : { }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "returns" : {
+        "type" : "reference",
+        "reference" : {
+          "name" : "User",
+          "package" : "conjure.typescript.fastify.test.types"
+        }
+      },
+      "markers" : [ ],
+      "tags" : [ ]
+    }, {
+      "endpointName" : "testUpdateById",
+      "httpMethod" : "PUT",
+      "httpPath" : "/crud/testUpdateById/{id}",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "id",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "UUID"
+        },
+        "paramType" : {
+          "type" : "path",
+          "path" : { }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      }, {
+        "argName" : "updateRequest",
+        "type" : {
+          "type" : "reference",
+          "reference" : {
+            "name" : "UpdateUserRequest",
+            "package" : "conjure.typescript.fastify.test.types"
+          }
+        },
+        "paramType" : {
+          "type" : "body",
+          "body" : { }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "returns" : {
+        "type" : "reference",
+        "reference" : {
+          "name" : "User",
+          "package" : "conjure.typescript.fastify.test.types"
+        }
+      },
+      "markers" : [ ],
+      "tags" : [ ]
+    }, {
+      "endpointName" : "testCreate",
+      "httpMethod" : "POST",
+      "httpPath" : "/crud/testCreate",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "createRequest",
+        "type" : {
+          "type" : "reference",
+          "reference" : {
+            "name" : "CreateUserRequest",
+            "package" : "conjure.typescript.fastify.test.types"
+          }
+        },
+        "paramType" : {
+          "type" : "body",
+          "body" : { }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "returns" : {
+        "type" : "reference",
+        "reference" : {
+          "name" : "User",
+          "package" : "conjure.typescript.fastify.test.types"
+        }
+      },
+      "markers" : [ ],
+      "tags" : [ ]
+    }, {
+      "endpointName" : "testDeleteById",
+      "httpMethod" : "DELETE",
+      "httpPath" : "/crud/testDeleteById/{id}",
+      "auth" : {
+        "type" : "header",
+        "header" : { }
+      },
+      "args" : [ {
+        "argName" : "id",
+        "type" : {
+          "type" : "primitive",
+          "primitive" : "UUID"
+        },
+        "paramType" : {
+          "type" : "path",
+          "path" : { }
+        },
+        "markers" : [ ],
+        "tags" : [ ]
+      } ],
+      "markers" : [ ],
+      "tags" : [ ]
+    } ],
+    "docs" : "CRUD Service\n"
+  } ],
+  "extensions" : { }
+}

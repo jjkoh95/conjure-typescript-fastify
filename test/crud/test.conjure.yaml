@@ -1,0 +1,99 @@
+types:
+  definitions:
+    default-package: conjure.typescript.fastify.test.types
+    objects:
+      Gender:
+        values:
+          - MALE
+          - FEMALE
+      
+      User: 
+        fields:
+          userId: uuid
+          email: string
+          gender: Gender
+          dateOfBirth: datetime
+          numOfFollowers: integer
+          balance: double
+          isReferred: boolean
+          referralId: optional<uuid>
+          secretKeys: list<string>
+          remark: any
+
+      CreateUserRequest:
+        fields:
+          email: string
+          gender: Gender
+          dateOfBirth: datetime
+          numOfFollowers: integer
+          balance: double
+          isReferred: boolean
+          referralId: optional<uuid>
+          secretKeys: list<string>
+          remark: any
+
+      UpdateUserRequest:
+        fields:
+          email: optional<string>
+          gender: optional<Gender>
+          dateOfBirth: optional<datetime>
+          numOfFollowers: optional<integer>
+          balance: optional<double>
+          isReferred: optional<boolean>
+          referralId: optional<uuid>
+          secretKeys: optional<list<string>>
+          remark: optional<any>
+
+    errors:
+      UserNotFound:
+        namespace: User
+        code: NOT_FOUND
+        safe-args:
+          userId: uuid
+
+services:
+  TestCrudService:
+    name: Test CRUD Service
+    package: conjure.typescript.fastify.test.crud
+    default-auth: header
+    base-path: /crud
+    docs: |
+      CRUD Service
+
+    endpoints:
+      testGetAll:
+        http: GET /testGetAll
+        args:
+          limit:
+            type: integer
+            param-type: query
+          offset:
+            type: integer
+            param-type: query
+        returns: list<User>
+          
+      testGetById:
+        http: GET /testGetById/{id}
+        args:
+          id: uuid
+        returns: User
+
+      testUpdateById:
+        http: PUT /testUpdateById/{id}
+        args:
+          id: uuid
+          updateRequest:
+            type: UpdateUserRequest
+        returns: User
+
+      testCreate:
+        http: POST /testCreate
+        args:
+          createRequest:
+            type: CreateUserRequest
+        returns: User
+
+      testDeleteById:
+        http: DELETE /testDeleteById/{id}
+        args:
+          id: uuid

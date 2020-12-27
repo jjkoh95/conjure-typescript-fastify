@@ -38,9 +38,9 @@ function buildRoute(endpointDef: IEndpointDefinition) {
 }
 
 export class ConjureServer {
-    private fastify: FastifyInstance = Fastify();
+    fastify: FastifyInstance = Fastify();
 
-    constructor() { }
+    constructor() {}
 
     // this is an extra "middleware"
     private _addValidator(
@@ -272,9 +272,11 @@ export class ConjureServer {
                             return (<object>request.query)[arg.argName];
                         };
                     } else if (IParameterType.isHeader(arg.paramType)) {
+                        // https://github.com/fastify/help/issues/71
+                        const headerKey = arg.paramType.header.paramId.toLowerCase();
                         return (request: FastifyRequest, reply: FastifyReply) => {
                             // this is guaranteed to be string, and Conjure always expects string from header
-                            return (<object>request.headers)[arg.argName];
+                            return (<object>request.headers)[headerKey];
                         };
                     } else {
                         throw new Error("Unknown type");
@@ -360,8 +362,8 @@ export class ConjureServer {
 
     }
 
-    start(port = 8080): void {
-        this.fastify.listen(port);
+    async start(port = 8080): Promise<void> {
+        await this.fastify.listen(port);
     }
 }
 

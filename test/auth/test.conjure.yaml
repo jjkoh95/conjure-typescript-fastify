@@ -1,0 +1,25 @@
+types:
+  definitions:
+    default-package: conjure.typescript.fastify.test.auth
+    errors:
+      Unauthenticated:
+        namespace: User
+        code: PERMISSION_DENIED
+
+services:
+  TestAuthService:
+    name: Test Auth Service
+    package: conjure.typescript.fastify.test.auth
+    default-auth: header
+    base-path: /auth
+    docs: |
+      Auth Service
+
+    endpoints:
+      testAuth:
+        http: GET /testAuth
+        args:
+          authHeader:
+            param-id: Authorization
+            param-type: header
+            type: optional<bearertoken>
